@@ -1,29 +1,29 @@
 # Dating App
 
-This is a Ruby on Rails dating application.
+Ruby on Railsで作成されたマッチングアプリです。
 
-## Docker Setup (Recommended)
+## Docker環境での開発（推奨）
 
-### Prerequisites
+### 必要なもの
 - Docker
-- Docker Compose (v2 or later)
-- Make (optional, but recommended)
+- Docker Compose (v2以降)
+- Make（あると便利）
 
-### Quick Start with Makefile
+### Makefileを使った簡単セットアップ
 
-1. Clone the repository
-2. Run the setup command:
+1. リポジトリをクローン
+2. セットアップコマンドを実行：
    ```bash
    make setup
    ```
-3. Access the application at `http://localhost:3002`
+3. `http://localhost:3002` でアプリにアクセス
 
-### Makefile Commands
+### Makefileコマンド一覧
 
 - `make help` - 利用可能なコマンドを表示
 - `make setup` - 初回セットアップ（ビルド→起動→DB設定）
-- `make dev` - 開発環境を起動
-- `make up` - アプリケーションを起動
+- `make dev` - 開発モードで起動（バックグラウンド起動＋ログ表示）
+- `make up` - アプリケーションを起動（フォアグラウンド）
 - `make down` - アプリケーションを停止
 - `make logs` - ログを表示
 - `make console` - Railsコンソールを起動
@@ -31,41 +31,41 @@ This is a Ruby on Rails dating application.
 - `make test` - テストを実行
 - `make clean` - 不要なDockerリソースを削除
 
-### Manual Docker Setup
+### 手動でのDocker環境セットアップ
 
-1. Clone the repository
-2. Build and start the application:
+1. リポジトリをクローン
+2. アプリケーションをビルド・起動：
    ```bash
    docker compose up --build
    ```
 
-3. In another terminal, set up the database:
+3. 別のターミナルでデータベースをセットアップ：
    ```bash
    docker compose exec web rails db:create
    docker compose exec web rails db:migrate
-   docker compose exec web rails db:seed  # if you have seed data
+   docker compose exec web rails db:seed  # シードデータがある場合
    ```
 
-4. Access the application at `http://localhost:3002`
+4. `http://localhost:3002` でアプリにアクセス
 
-### Useful Docker Commands
+### よく使うDockerコマンド
 
-- Start the application: `docker compose up`
-- Stop the application: `docker compose down`
-- View logs: `docker compose logs`
-- Access Rails console: `docker compose exec web rails console`
-- Run tests: `docker compose exec web rails test`
-- Reset database: `docker compose exec web rails db:reset`
+- アプリ起動: `docker compose up`
+- アプリ停止: `docker compose down`
+- ログ確認: `docker compose logs`
+- Railsコンソール: `docker compose exec web rails console`
+- テスト実行: `docker compose exec web rails test`
+- DB初期化: `docker compose exec web rails db:reset`
 
-### Notes
+### 補足
 
-- This project uses Docker Compose v2 syntax (`docker compose` instead of `docker-compose`)
-- The application runs on port 3002 (mapped from container port 3000)
-- PostgreSQL database runs on port 5432
+- Docker Compose v2構文（`docker compose`）を使用
+- アプリケーションはポート3002で動作（コンテナ内は3000番ポート）
+- PostgreSQLはポート5432で動作
 
-## Development Guidelines
+## 開発ガイドライン
 
-### Commit Message Format
+### コミットメッセージの形式
 
 このプロジェクトでは以下の接頭語を使用してコミットメッセージを統一しています：
 
@@ -80,24 +80,23 @@ fix: ログイン時のエラーハンドリングの修正
 chore: Docker環境のセットアップ
 ```
 
-## Local Development (Without Docker)
+## ローカル開発（Dockerを使わない場合）
 
-Things you may want to cover:
+### 技術スタック
 
-* Ruby version: 3.3.0
+* Ruby バージョン: 3.3.0
+* フレームワーク: Ruby on Rails 8.0.2
+* データベース: PostgreSQL
+* CSS: Tailwind CSS
 
-* System dependencies
+### セットアップ手順
 
-* Configuration
+* システム依存関係のインストール
+* 設定ファイルの準備
+* データベース作成
+* データベース初期化
+* テストスイートの実行方法
+* サービス（ジョブキュー、キャッシュサーバー、検索エンジンなど）
+* デプロイ手順
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+詳細は追って記載予定...
