@@ -1,4 +1,543 @@
-<div>
-  <h1 class="font-bold text-4xl">Home#index</h1>
-  <p>Find me in app/views/home/index.html.erb</p>
+<div class="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50">
+  <!-- ヘッダー -->
+  <header class="bg-white/90 backdrop-blur-md shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-12 h-12 bg-gradient-to-r from-pink-500 via-rose-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
+            <span class="text-white text-2xl">💕</span>
+          </div>
+          <h1 class="text-2xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">LoveConnect</h1>
+        </div>
+        <nav class="flex items-center space-x-6">
+          <a href="#features" class="text-gray-600 hover:text-pink-600 font-medium transition-colors">機能</a>
+          <a href="#success" class="text-gray-600 hover:text-pink-600 font-medium transition-colors">成功事例</a>
+          <a href="#reviews" class="text-gray-600 hover:text-pink-600 font-medium transition-colors">口コミ</a>
+          <%= link_to "ログイン", new_session_path, 
+              class: "text-gray-600 hover:text-pink-600 px-4 py-2 rounded-lg font-medium transition-colors duration-200" %>
+          <a href="#signup" class="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+            無料で始める
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="pt-20">
+    <!-- ヒーローセクション -->
+    <section class="py-24 px-4 relative overflow-hidden">
+      <!-- 背景アニメーション -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute top-40 left-40 w-80 h-80 bg-rose-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+      </div>
+      
+      <div class="max-w-7xl mx-auto relative">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="text-center lg:text-left">
+            <div class="inline-flex items-center bg-gradient-to-r from-pink-100 to-purple-100 rounded-full px-6 py-2 mb-6">
+              <span class="text-pink-600 font-semibold">🎉 日本No.1マッチングアプリ</span>
+            </div>
+            <h2 class="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              運命の人と
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-rose-600 to-purple-600 animate-gradient">
+                出会おう
+              </span>
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+              最先端AIが導く、あなただけの特別な出会い<br>
+              <span class="font-bold text-pink-600">安心・安全・確実</span>なマッチングを実現
+            </p>
+
+            <!-- 統計カウンター -->
+            <div class="grid grid-cols-3 gap-6 mb-10">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-pink-600 mb-1" data-count="1500">0</div>
+                <div class="text-sm text-gray-600">万人の登録者</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-rose-600 mb-1" data-count="98">0</div>
+                <div class="text-sm text-gray-600">%のマッチング率</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-purple-600 mb-1" data-count="50">0</div>
+                <div class="text-sm text-gray-600">万組のカップル誕生</div>
+              </div>
+            </div>
+
+            <!-- CTA ボタン -->
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <a href="#signup" class="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-10 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center">
+                ✨ 今すぐ無料で始める
+              </a>
+              <%= link_to new_session_path, 
+                  class: "bg-white hover:bg-gray-50 text-pink-600 px-10 py-4 rounded-2xl text-lg font-bold border-2 border-pink-300 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center" do %>
+                🔐 既にアカウントをお持ちの方
+              <% end %>
+            </div>
+
+            <!-- 信頼バッジ -->
+            <div class="flex flex-wrap justify-center lg:justify-start items-center gap-4 text-sm text-gray-500">
+              <div class="flex items-center gap-2">
+                <span class="text-green-500">🛡️</span>
+                <span>SSL暗号化通信</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-blue-500">✅</span>
+                <span>本人確認済み</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-purple-500">🏆</span>
+                <span>アプリ大賞受賞</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ヒーロー画像エリア -->
+          <div class="relative">
+            <div class="bg-gradient-to-br from-white to-pink-50 rounded-3xl p-8 shadow-2xl">
+              <div class="space-y-6">
+                <!-- スマホモックアップ -->
+                <div class="bg-gray-900 rounded-3xl p-2 mx-auto w-64">
+                  <div class="bg-white rounded-2xl p-6 space-y-4">
+                    <div class="flex items-center space-x-3">
+                      <div class="w-12 h-12 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full"></div>
+                      <div>
+                        <div class="h-3 bg-gray-200 rounded w-20 mb-2"></div>
+                        <div class="h-2 bg-gray-100 rounded w-16"></div>
+                      </div>
+                    </div>
+                    <div class="space-y-2">
+                      <div class="h-2 bg-gray-100 rounded"></div>
+                      <div class="h-2 bg-gray-100 rounded w-3/4"></div>
+                    </div>
+                    <div class="flex space-x-2">
+                      <div class="bg-pink-500 text-white px-4 py-2 rounded-full text-xs">💕 いいね</div>
+                      <div class="bg-gray-200 px-4 py-2 rounded-full text-xs">💬 メッセージ</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- 浮遊する要素 -->
+                <div class="absolute -top-4 -left-4 bg-pink-500 text-white p-3 rounded-2xl shadow-lg animate-bounce">
+                  <span class="text-sm font-bold">新着マッチ！</span>
+                </div>
+                <div class="absolute -bottom-4 -right-4 bg-purple-500 text-white p-3 rounded-2xl shadow-lg animate-pulse">
+                  <span class="text-sm font-bold">メッセージ受信</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- メディア掲載実績 -->
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8">メディア掲載実績</h3>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-60">
+          <div class="bg-gray-100 rounded-lg p-4 h-16 flex items-center justify-center">
+            <span class="font-bold text-gray-600">日経新聞</span>
+          </div>
+          <div class="bg-gray-100 rounded-lg p-4 h-16 flex items-center justify-center">
+            <span class="font-bold text-gray-600">TechCrunch</span>
+          </div>
+          <div class="bg-gray-100 rounded-lg p-4 h-16 flex items-center justify-center">
+            <span class="font-bold text-gray-600">Forbes</span>
+          </div>
+          <div class="bg-gray-100 rounded-lg p-4 h-16 flex items-center justify-center">
+            <span class="font-bold text-gray-600">Wired</span>
+          </div>
+          <div class="bg-gray-100 rounded-lg p-4 h-16 flex items-center justify-center">
+            <span class="font-bold text-gray-600">朝日新聞</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 機能紹介セクション -->
+    <section id="features" class="py-20 px-4 bg-gradient-to-br from-gray-50 to-pink-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h3 class="text-4xl font-bold text-gray-900 mb-4">
+            なぜ<span class="text-pink-600">選ばれる</span>のか
+          </h3>
+          <p class="text-xl text-gray-600">最新技術で実現する、新しい出会いの形</p>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-12">
+          <!-- 機能1 -->
+          <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="w-20 h-20 bg-gradient-to-r from-pink-500 to-rose-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <span class="text-3xl">🛡️</span>
+            </div>
+            <h4 class="text-2xl font-bold text-gray-900 mb-4 text-center">完全安心システム</h4>
+            <p class="text-gray-600 text-center leading-relaxed mb-6">
+              24時間AI監視と厳格な本人確認で、安全な出会いをお約束します。
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>身分証明書による本人確認</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>24時間AIによる不正監視</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>ブロック・通報機能完備</li>
+            </ul>
+          </div>
+          
+          <!-- 機能2 -->
+          <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="w-20 h-20 bg-gradient-to-r from-rose-500 to-orange-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <span class="text-3xl">🎯</span>
+            </div>
+            <h4 class="text-2xl font-bold text-gray-900 mb-4 text-center">AI マッチング</h4>
+            <p class="text-gray-600 text-center leading-relaxed mb-6">
+              独自のAIアルゴリズムが、あなたの理想の相手を高精度で見つけ出します。
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>98%の高精度マッチング</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>性格診断による相性分析</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>学習型AIで精度向上</li>
+            </ul>
+          </div>
+          
+          <!-- 機能3 -->
+          <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="w-20 h-20 bg-gradient-to-r from-orange-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <span class="text-3xl">💬</span>
+            </div>
+            <h4 class="text-2xl font-bold text-gray-900 mb-4 text-center">スマートチャット</h4>
+            <p class="text-gray-600 text-center leading-relaxed mb-6">
+              会話をサポートするAI機能で、自然で楽しいコミュニケーションを実現。
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>会話のきっかけ提案</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>翻訳機能で国際交流</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>ビデオ通話機能</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 使い方ガイド -->
+    <section class="py-20 px-4 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h3 class="text-4xl font-bold text-gray-900 mb-4">簡単3ステップで始められます</h3>
+          <p class="text-xl text-gray-600">たった5分で素敵な出会いがスタート</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-12">
+          <div class="text-center">
+            <div class="w-24 h-24 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <span class="text-white text-3xl font-bold">1</span>
+            </div>
+            <h4 class="text-2xl font-bold text-gray-900 mb-4">プロフィール作成</h4>
+            <p class="text-gray-600 leading-relaxed">
+              写真と基本情報を登録。AIがあなたの魅力を最大限に引き出すプロフィールを提案します。
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-24 h-24 bg-gradient-to-r from-rose-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <span class="text-white text-3xl font-bold">2</span>
+            </div>
+            <h4 class="text-2xl font-bold text-gray-900 mb-4">AIマッチング</h4>
+            <p class="text-gray-600 leading-relaxed">
+              独自のアルゴリズムがあなたにぴったりの相手を見つけ出し、毎日新しい出会いをお届けします。
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-24 h-24 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <span class="text-white text-3xl font-bold">3</span>
+            </div>
+            <h4 class="text-2xl font-bold text-gray-900 mb-4">メッセージ交換</h4>
+            <p class="text-gray-600 leading-relaxed">
+              気になる相手とメッセージ交換。AIがサポートするので、自然な会話が続きます。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 成功事例 -->
+    <section id="success" class="py-20 px-4 bg-gradient-to-br from-pink-50 to-purple-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h3 class="text-4xl font-bold text-gray-900 mb-4">
+            <span class="text-pink-600">幸せな</span>カップルたち
+          </h3>
+          <p class="text-xl text-gray-600">LoveConnectで出会った素敵なカップルのストーリー</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- 成功事例1 -->
+          <div class="bg-white rounded-3xl p-8 shadow-lg">
+            <div class="flex items-center mb-6">
+              <div class="w-16 h-16 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full mr-4"></div>
+              <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full -ml-4"></div>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-2">田中さん & 佐藤さん</h4>
+            <p class="text-gray-600 mb-4">交際期間: 1年2ヶ月</p>
+            <p class="text-gray-700 leading-relaxed">
+              「共通の趣味がきっかけで意気投合。AIのマッチング精度に驚きました！今では結婚を前提にお付き合いしています。」
+            </p>
+          </div>
+          
+          <!-- 成功事例2 -->
+          <div class="bg-white rounded-3xl p-8 shadow-lg">
+            <div class="flex items-center mb-6">
+              <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-400 rounded-full mr-4"></div>
+              <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full -ml-4"></div>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-2">山田さん & 鈴木さん</h4>
+            <p class="text-gray-600 mb-4">交際期間: 8ヶ月</p>
+            <p class="text-gray-700 leading-relaxed">
+              「最初は緊張しましたが、AIのサポートで自然な会話ができました。今では毎日が楽しくて仕方ありません！」
+            </p>
+          </div>
+          
+          <!-- 成功事例3 -->
+          <div class="bg-white rounded-3xl p-8 shadow-lg">
+            <div class="flex items-center mb-6">
+              <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mr-4"></div>
+              <div class="w-16 h-16 bg-gradient-to-r from-indigo-400 to-blue-400 rounded-full -ml-4"></div>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-2">高橋さん & 伊藤さん</h4>
+            <p class="text-gray-600 mb-4">交際期間: 2年</p>
+            <p class="text-gray-700 leading-relaxed">
+              「遠距離でしたが、アプリの機能のおかげで距離を感じませんでした。来月ついに結婚式です！」
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- お客様の声 -->
+    <section id="reviews" class="py-20 px-4 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h3 class="text-4xl font-bold text-gray-900 mb-4">お客様の声</h3>
+          <p class="text-xl text-gray-600">実際にご利用いただいた方々からの評価</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- レビュー1 -->
+          <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl p-8 shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <span>⭐⭐⭐⭐⭐</span>
+              </div>
+              <span class="ml-2 text-gray-600 font-medium">5.0</span>
+            </div>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              「他のアプリと比べて、本当に相性の良い人とマッチングできます。AIの精度が素晴らしい！」
+            </p>
+            <div class="flex items-center">
+              <div class="w-10 h-10 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full mr-3"></div>
+              <div>
+                <p class="font-semibold text-gray-900">A.Kさん (28歳)</p>
+                <p class="text-sm text-gray-600">会社員</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- レビュー2 -->
+          <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <span>⭐⭐⭐⭐⭐</span>
+              </div>
+              <span class="ml-2 text-gray-600 font-medium">5.0</span>
+            </div>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              「安全性が高くて安心して使えます。サポートも丁寧で、初心者でも使いやすいです。」
+            </p>
+            <div class="flex items-center">
+              <div class="w-10 h-10 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mr-3"></div>
+              <div>
+                <p class="font-semibold text-gray-900">M.Tさん (32歳)</p>
+                <p class="text-sm text-gray-600">看護師</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- レビュー3 -->
+          <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl p-8 shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <span>⭐⭐⭐⭐⭐</span>
+              </div>
+              <span class="ml-2 text-gray-600 font-medium">5.0</span>
+            </div>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              「UIが美しくて使いやすい。機能も充実していて、他のアプリには戻れません！」
+            </p>
+            <div class="flex items-center">
+              <div class="w-10 h-10 bg-gradient-to-r from-green-400 to-teal-400 rounded-full mr-3"></div>
+              <div>
+                <p class="font-semibold text-gray-900">R.Sさん (26歳)</p>
+                <p class="text-sm text-gray-600">デザイナー</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 料金プラン -->
+    <section class="py-20 px-4 bg-gradient-to-br from-gray-50 to-pink-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h3 class="text-4xl font-bold text-gray-900 mb-4">料金プラン</h3>
+          <p class="text-xl text-gray-600">あなたに最適なプランをお選びください</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- 無料プラン -->
+          <div class="bg-white rounded-3xl p-8 shadow-lg">
+            <div class="text-center mb-8">
+              <h4 class="text-2xl font-bold text-gray-900 mb-2">フリープラン</h4>
+              <div class="text-4xl font-bold text-gray-900 mb-2">¥0</div>
+              <p class="text-gray-600">まずはお試しから</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>基本マッチング機能</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>月10回まで「いいね」</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>基本プロフィール作成</li>
+              <li class="flex items-center"><span class="text-gray-400 mr-2">✗</span>メッセージ無制限</li>
+            </ul>
+            <button class="w-full bg-gray-200 text-gray-700 py-3 rounded-xl font-bold hover:bg-gray-300 transition-colors">
+              無料で始める
+            </button>
+          </div>
+          
+          <!-- プレミアムプラン -->
+          <div class="bg-gradient-to-br from-pink-500 to-purple-500 text-white rounded-3xl p-8 shadow-xl transform scale-105">
+            <div class="text-center mb-8">
+              <div class="bg-yellow-400 text-yellow-900 px-4 py-1 rounded-full text-sm font-bold mb-4 inline-block">
+                人気No.1
+              </div>
+              <h4 class="text-2xl font-bold mb-2">プレミアムプラン</h4>
+              <div class="text-4xl font-bold mb-2">¥3,980<span class="text-lg">/月</span></div>
+              <p class="text-pink-100">本気で出会いたい方に</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>無制限「いいね」</li>
+              <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>メッセージ無制限</li>
+              <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>AI相性診断</li>
+              <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>プロフィール優先表示</li>
+            </ul>
+            <button class="w-full bg-white text-pink-600 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors">
+              プレミアムを始める
+            </button>
+          </div>
+          
+          <!-- VIPプラン -->
+          <div class="bg-white rounded-3xl p-8 shadow-lg">
+            <div class="text-center mb-8">
+              <h4 class="text-2xl font-bold text-gray-900 mb-2">VIPプラン</h4>
+              <div class="text-4xl font-bold text-gray-900 mb-2">¥6,980<span class="text-lg">/月</span></div>
+              <p class="text-gray-600">最高の出会い体験を</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>プレミアム機能全て</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>専属コンシェルジュ</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>プロフィール写真撮影</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>デート場所提案</li>
+            </ul>
+            <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-xl font-bold hover:from-purple-600 hover:to-pink-600 transition-colors">
+              VIPを始める
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最終CTA -->
+    <section id="signup" class="py-20 px-4 bg-gradient-to-r from-pink-500 via-rose-500 to-purple-500 text-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-4xl md:text-5xl font-bold mb-6">
+          今すぐ始めて、運命の人と出会おう
+        </h3>
+        <p class="text-xl mb-8 opacity-90">
+          1500万人が利用する日本最大級のマッチングアプリ<br>
+          あなたの素敵な出会いが、ここから始まります
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+          <a href="#" class="bg-white text-pink-600 px-12 py-4 rounded-2xl text-xl font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200">
+            ✨ 無料で今すぐ始める
+          </a>
+          <%= link_to new_session_path, 
+              class: "border-2 border-white text-white px-12 py-4 rounded-2xl text-xl font-bold hover:bg-white hover:text-pink-600 transition-all duration-200" do %>
+            🔐 ログインする
+          <% end %>
+        </div>
+        
+        <p class="text-sm opacity-75">
+          ※無料プランでも基本機能をご利用いただけます<br>
+          ※クレジットカード登録不要
+        </p>
+      </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center">
+                <span class="text-white text-xl">💕</span>
+              </div>
+              <h4 class="text-xl font-bold">LoveConnect</h4>
+            </div>
+            <p class="text-gray-400 mb-4">素敵な出会いをお手伝いします</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-pink-400 transition-colors">📘</a>
+              <a href="#" class="text-gray-400 hover:text-pink-400 transition-colors">📷</a>
+              <a href="#" class="text-gray-400 hover:text-pink-400 transition-colors">🐦</a>
+            </div>
+          </div>
+          
+          <div>
+            <h5 class="font-bold mb-4">サービス</h5>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-pink-400 transition-colors">機能紹介</a></li>
+              <li><a href="#" class="hover:text-pink-400 transition-colors">料金プラン</a></li>
+              <li><a href="#" class="hover:text-pink-400 transition-colors">成功事例</a></li>
+              <li><a href="#" class="hover:text-pink-400 transition-colors">お客様の声</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h5 class="font-bold mb-4">サポート</h5>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-pink-400 transition-colors">ヘルプセンター</a></li>
+              <li><a href="#" class="hover:text-pink-400 transition-colors">お問い合わせ</a></li>
+              <li><a href="#" class="hover:text-pink-400 transition-colors">安全ガイド</a></li>
+              <li><a href="#" class="hover:text-pink-400 transition-colors">コミュニティ</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h5 class="font-bold mb-4">法的情報</h5>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-pink-400 transition-colors">利用規約</a></li>
+              <li><a href="#" class="hover:text-pink-400 transition-colors">プライバシーポリシー</a></li>
+              <li><a href="#" class="hover:text-pink-400 transition-colors">特定商取引法</a></li>
+              <li><a href="#" class="hover:text-pink-400 transition-colors">会社概要</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+          <p>&copy; 2024 LoveConnect. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
 </div>
