@@ -7,3 +7,30 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# テストユーザーの作成
+puts "Creating test users..."
+
+# テストユーザー1
+test_user1 = User.find_or_create_by!(email_address: "test@example.com") do |user|
+  user.password = "password123"
+  user.password_confirmation = "password123"
+end
+
+# テストユーザー2
+test_user2 = User.find_or_create_by!(email_address: "demo@example.com") do |user|
+  user.password = "password123"
+  user.password_confirmation = "password123"
+end
+
+# テストユーザー3
+test_user3 = User.find_or_create_by!(email_address: "sample@example.com") do |user|
+  user.password = "password123"
+  user.password_confirmation = "password123"
+end
+
+puts "Test users created successfully!"
+puts "Login credentials:"
+puts "Email: test@example.com, Password: password123"
+puts "Email: demo@example.com, Password: password123"
+puts "Email: sample@example.com, Password: password123"
