@@ -1,0 +1,161 @@
+<div class="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50">
+  <!-- ヘッダー -->
+  <header class="bg-white/90 backdrop-blur-md shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-12 h-12 bg-gradient-to-r from-pink-500 via-rose-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
+            <span class="text-white text-2xl">💕</span>
+          </div>
+          <h1 class="text-2xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">LoveConnect</h1>
+        </div>
+        <nav class="flex items-center space-x-6">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full flex items-center justify-center">
+              <span class="text-white text-sm font-bold">👤</span>
+            </div>
+            <span class="text-gray-700 font-medium">こんにちは！</span>
+          </div>
+          <%= link_to 'ログアウト', session_path, data: { turbo_method: :delete },
+              class: "text-gray-600 hover:text-pink-600 px-4 py-2 rounded-lg font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer" %>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="pt-24 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- ウェルカムセクション -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          ダッシュボードへ<span class="text-pink-600">ようこそ</span>！
+        </h2>
+        <p class="text-xl text-gray-600">素敵な出会いを見つけましょう ✨</p>
+      </div>
+
+      <!-- メインアクション -->
+      <div class="grid lg:grid-cols-2 gap-8 mb-12">
+        <!-- 新しいマッチ -->
+        <div class="bg-white rounded-3xl p-8 shadow-xl">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-2xl font-bold text-gray-900">新しいマッチ</h3>
+            <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm font-semibold">12件</span>
+          </div>
+          
+          <div class="space-y-4 mb-6">
+            <!-- マッチカード例 -->
+            <div class="flex items-center space-x-4 p-4 bg-gradient-to-r from-pink-50 to-rose-50 rounded-2xl hover:shadow-md transition-all duration-200">
+              <div class="w-16 h-16 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full flex items-center justify-center">
+                <span class="text-white text-xl">👩</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-gray-900">さくらさん</h4>
+                <p class="text-gray-600 text-sm">25歳 • 東京都</p>
+                <p class="text-pink-600 text-sm">共通の趣味: 映画鑑賞</p>
+              </div>
+              <button class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-xl font-medium transition-colors">
+                メッセージ
+              </button>
+            </div>
+
+            <div class="flex items-center space-x-4 p-4 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl hover:shadow-md transition-all duration-200">
+              <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full flex items-center justify-center">
+                <span class="text-white text-xl">👩</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-gray-900">みゆきさん</h4>
+                <p class="text-gray-600 text-sm">28歳 • 神奈川県</p>
+                <p class="text-purple-600 text-sm">共通の趣味: カフェ巡り</p>
+              </div>
+              <button class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-xl font-medium transition-colors">
+                メッセージ
+              </button>
+            </div>
+          </div>
+
+          <button class="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white py-3 rounded-2xl font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+            すべてのマッチを見る
+          </button>
+        </div>
+
+        <!-- おすすめユーザー -->
+        <div class="bg-white rounded-3xl p-8 shadow-xl">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-2xl font-bold text-gray-900">おすすめユーザー</h3>
+            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">AI選出</span>
+          </div>
+          
+          <div class="space-y-4 mb-6">
+            <!-- おすすめカード例 -->
+            <div class="flex items-center space-x-4 p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl hover:shadow-md transition-all duration-200">
+              <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
+                <span class="text-white text-xl">👩</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-gray-900">あやかさん</h4>
+                <p class="text-gray-600 text-sm">26歳 • 東京都</p>
+                <p class="text-blue-600 text-sm">相性度: 95%</p>
+              </div>
+              <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-xl font-medium transition-colors">
+                いいね
+              </button>
+            </div>
+
+            <div class="flex items-center space-x-4 p-4 bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl hover:shadow-md transition-all duration-200">
+              <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-400 rounded-full flex items-center justify-center">
+                <span class="text-white text-xl">👩</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-gray-900">りなさん</h4>
+                <p class="text-gray-600 text-sm">24歳 • 千葉県</p>
+                <p class="text-green-600 text-sm">相性度: 92%</p>
+              </div>
+              <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl font-medium transition-colors">
+                いいね
+              </button>
+            </div>
+          </div>
+
+          <button class="w-full bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white py-3 rounded-2xl font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+            もっと見る
+          </button>
+        </div>
+      </div>
+
+      <!-- クイックアクション -->
+      <div class="bg-white rounded-3xl p-8 shadow-xl">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">クイックアクション</h3>
+        <div class="grid md:grid-cols-4 gap-4">
+          <button class="flex flex-col items-center p-6 bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl hover:shadow-lg transition-all duration-200 group">
+            <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <span class="text-white text-2xl">👤</span>
+            </div>
+            <span class="font-semibold text-gray-900">プロフィール編集</span>
+          </button>
+
+          <button class="flex flex-col items-center p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl hover:shadow-lg transition-all duration-200 group">
+            <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <span class="text-white text-2xl">🔍</span>
+            </div>
+            <span class="font-semibold text-gray-900">ユーザー検索</span>
+          </button>
+
+          <button class="flex flex-col items-center p-6 bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl hover:shadow-lg transition-all duration-200 group">
+            <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <span class="text-white text-2xl">⚙️</span>
+            </div>
+            <span class="font-semibold text-gray-900">設定</span>
+          </button>
+
+          <button class="flex flex-col items-center p-6 bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl hover:shadow-lg transition-all duration-200 group">
+            <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <span class="text-white text-2xl">💎</span>
+            </div>
+            <span class="font-semibold text-gray-900">プレミアム</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div> 
